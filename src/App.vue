@@ -14,7 +14,8 @@
 body {
   margin: 0;
   padding: 0;
-  --description-bg-color: orange;
+  --parallax-bg-color: orange;
+  --description-bg-color: lightblue;
   --text-color: black;
 }
 </style>

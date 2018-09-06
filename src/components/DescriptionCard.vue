@@ -15,7 +15,7 @@ export default {
 
 <style>
 .description-card {
-  margin-bottom: 1000px;
+  margin-bottom: 300px;
 }
 
 .title {
