@@ -1,4 +1,5 @@
-# me
+# Portfolio-Site
+An excuse to learn Vue.js?
 
 ## Project setup
 ```

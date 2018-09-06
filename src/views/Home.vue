@@ -1,18 +1,27 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <HomeParallaxImage />
+    <HomeParallaxScroll/>
+    <!-- </HomeParallaxScroll> -->
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+import HomeParallaxImage from '@/components/HomeParallaxImage.vue';
+import HomeParallaxScroll from '@/components/HomeParallaxScroll.vue';
 
 export default {
-  name: "home",
+  name: 'home',
   components: {
-    HelloWorld
+    HomeParallaxImage,
+    HomeParallaxScroll
   }
 };
 </script>
+
+<style>
+.home {
+  --parallax-text-color: black;
+}
+</style>
