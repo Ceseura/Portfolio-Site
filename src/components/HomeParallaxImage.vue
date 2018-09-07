@@ -6,15 +6,21 @@
           <div class='link-tooltip' v-if='this.show_github'> Github </div>
         </div>
       </a>
+      <a href='mailto:myboringemail4@gmail.com'>
+        <div class='email link-circle' v-on:mouseenter='show_tooltip(4)' v-on:mouseleave='hide_tooltip(4)'/>
+        <div class='height-offset2 occluder'>
+          <div class='link-tooltip' v-if='this.show_email'> Email </div>
+        </div>
+      </a>
       <a href='https://www.linkedin.com/in/alexander-liang-7070b9167/'>
         <div class='linkedin link-circle' v-on:mouseenter='show_tooltip(2)' v-on:mouseleave='hide_tooltip(2)'/>
-        <div class='height-offset2 occluder'>
+        <div class='height-offset3 occluder'>
           <div class='link-tooltip' v-if='this.show_linkedin'> Linkedin </div>
         </div>
       </a>
       <a href='https://drive.google.com/file/d/0Bzt4QEceUnY6NFhXRTIwSy1JMXM/view'>
         <div class='resume link-circle' v-on:mouseenter='show_tooltip(3)' v-on:mouseleave='hide_tooltip(3)'/>
-        <div class='height-offset3 occluder'>
+        <div class='height-offset4 occluder'>
           <div class='link-tooltip' v-if='this.show_resume'> Resume </div>
         </div>
       </a>
@@ -39,7 +45,7 @@ export default {
       show_github: false,
       show_linkedin: false,
       show_resume: false,
-      pdf_location: '../assets/Resume.pdf'
+      show_email: false,
     }
   },
   methods: {
@@ -54,6 +60,8 @@ export default {
         this.show_linkedin = true;
       } else if (i === 3) {
         this.show_resume = true;
+      } else if (i === 4) {
+        this.show_email = true;
       }
     },
     hide_tooltip: function(i) {
@@ -63,6 +71,8 @@ export default {
         this.show_linkedin = false;
       } else if (i === 3) {
         this.show_resume = false;
+      } else if (i === 4) {
+        this.show_email = false;
       }
     }
   }
@@ -99,6 +109,20 @@ export default {
   top: 160px;
 }
 
+.height-offset4 {
+  top: 230px;
+}
+
+.email {
+  background-image: url('../assets/email_dark.png');
+  background-size: 50px 50px;
+  top: 70px;
+  right: 0;
+}
+.email:hover {
+  background-image: url('../assets/email_light.png');
+}
+
 .github {
   background-image: url('../assets/github_dark.png');
   background-size: 50px 50px;
@@ -112,7 +136,7 @@ export default {
 .linkedin {
   background-image: url('../assets/linkedin_dark.png');
   background-size: 50px 50px;
-  top: 70px;
+  top: 140px;
   right: 0;
 }
 .linkedin:hover {
@@ -122,7 +146,7 @@ export default {
 .resume {
   background-image: url('../assets/resume_dark.png');
   background-size: 50px 50px;
-  top: 140px;
+  top: 210px;
   right: 0;
 }
 .resume:hover {
