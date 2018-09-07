@@ -18,13 +18,6 @@ export default {
   margin-bottom: 300px;
 }
 
-.title {
-  color: var(--text-color);
-  font-size: 40px;
-  width: 100%;
-  border-bottom: 1px solid var(--text-color);
-}
-
 .content {
   color: var(--text-color);
   font-size: 20px;

@@ -4,7 +4,6 @@
             <div class='angle-piece' />
         </div>
         <div class='width-limiter'>
-            <Description />
             <Portfolio />
             <Contact />
         </div>
@@ -42,22 +41,26 @@ export default {
   overflow: hidden;
   position: relative;
   top: -20vh;
+  pointer-events: none;
 }
 
 .angle-piece {
   position: absolute;
   top: 100%;
   width: 120vw;
-  height: 30vh;
+  height: 20vh;
   background-color: var(--parallax-bg-color);
   transform: translate(-10vw, -10vh) rotateZ(-5deg);
+  pointer-events: all;
+  z-index: 1;
 }
 
 .width-limiter {
-  background-color: var(--description-bg-color);
+  background-color: var(--parallax-bg-color);
   width: 100%;
-  max-width: 900px;
+  max-width: 1200px;
   padding: 50px;
+  padding-top: 0;
   box-sizing: border-box;
   display: block;
   margin: auto;

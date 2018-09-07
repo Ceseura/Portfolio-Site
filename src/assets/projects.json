@@ -1,0 +1,40 @@
+{
+  "projects": [
+    {
+      "name": "This Website",
+      "tags_short": ["Vue.js", "Html5", "CSS"],
+      "icon_url": "mysite.png",
+      "href_url": "https://github.com/Karavis/Portfolio-Site"
+    },
+    {
+      "name": "Kojai.tv",
+      "tags_short": ["Bootstrap", "Django", "Heroku"],
+      "icon_url": "kojai.png",
+      "href_url": "https://github.com/mmw5hy/Kojai"
+    },
+    {
+      "name": "Shardbound Cardbot",
+      "tags_short": ["Python", "AWS", "praw", "lxml"],
+      "icon_url": "shardbound.png",
+      "href_url": "https://github.com/Karavis/ShardboundCardBot"
+    },
+    {
+      "name": "Face Recognizer",
+      "tags_short": ["AI", "OpenCV", "Eigenface"],
+      "icon_url": "face_detection.png",
+      "href_url": "https://github.com/Karavis/cvisionProject"
+    },
+    {
+        "name": "Hexagon Inspiration",
+        "tags_short": ["Hexagon", "CSS"],
+        "icon_url": "hexagons.png",
+        "href_url": "https://github.com/Karavis/CSS-play"
+    },
+    {
+        "name": "Relic Appraiser",
+        "tags_short": ["Market Analysis", "WIP"],
+        "icon_url": "warframe.png",
+        "href_url": "https://github.com/Karavis/Relic-Appraiser"
+    }
+  ]
+}

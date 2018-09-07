@@ -1,14 +1,13 @@
 <template>
     <div class='portfolio-card'>
-        <div class='title'> Placeholder Text </div>
+        <div class='title'> My Projects </div>
         <div class='hexagons'>
             <ul class='hex-grid clear'>
                 <li is='Hexagon' 
                   v-for='i in numberHexagons' 
                   v-bind:key='i' 
                   v-bind:state='hexLayout[i-1]' 
-                  v-bind:title='hexTitles[hexLayout[i-1]]'
-                  v-bind:tags='hexTags[hexLayout[i-1]]'>
+                  v-bind:hexData='getHexData(hexLayout[i-1])'>
                 </li>
             </ul>
         </div>
@@ -17,33 +16,45 @@
 
 <script>
 import Hexagon from '@/components/PortfolioCardHexagon.vue';
+import data from '@/assets/projects.json';
 
-var a = [1, 0, 0, 0,
-         0, 2, 4, 0,
-         0, -1, 3 ,0,
-         0, 0, 0, 0];
-
-// extract to json?
-var b = ['', 'Placeholder 1', 'title 2', 'project 3', 'listitem 4'];
-var c = [[], ['Python', 'AWS'], ['Angular2', 'mySQL', 'Bootstrap'], ['React', 'Redux', 'Jenkins', 'Hibernate'], ['Vue.js']];
+var a = [1, -1, 6, 0,
+         -1, 2, 4, 0,
+         -1, 3, -1 ,0,
+         0, 5, 0];
 
 export default {
-  name: 'PortfolioCard',
   components: {
     Hexagon,
   },
   data: function() {
     return {
-      numberHexagons: 16,
+      numberHexagons: 15,
       hexLayout: a,
-      hexTitles: b,
-      hexTags: c,
     };
+  },
+  methods: {
+    getHexData: function(i) {
+      if (i > 0) {
+        return data.projects[i-1];
+      } else {
+        return null;
+      }
+    }
   }
 };
 </script>
 
 <style scoped>
+.title {
+  padding-left: 40px;
+  color: var(--text-color);
+  font-size: 60px;
+  font-family: 'Montserrat', sans-serif;
+  width: 100%;
+  border-bottom: 1px solid var(--text-color);
+}
+
 .hex-grid {
   position: relative;
   padding: 0;

@@ -14,8 +14,13 @@
 body {
   margin: 0;
   padding: 0;
-  --parallax-bg-color: orange;
+  --parallax-bg-color: #fffee3;
   --description-bg-color: lightblue;
   --text-color: black;
+}
+
+a {
+  text-decoration: none;
+  color: black;
 }
 </style>
