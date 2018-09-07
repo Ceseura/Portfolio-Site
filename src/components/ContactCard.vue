@@ -27,6 +27,7 @@ export default {};
   height: 100vh;
   background-image: url('../assets/tilable2.jpg');
 
+  margin-top: -100vh;
   position: sticky;
   top: 0;
 }

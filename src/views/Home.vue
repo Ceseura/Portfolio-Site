@@ -3,6 +3,7 @@
     <HomeParallaxImage />
     <HomeParallaxScroll />
     <ContactParallaxBg />
+    <div class='spacer-100vh' />
   </div>
 </template>
 
@@ -24,6 +25,11 @@ export default {
 
 <style>
 .home {
-  height: 500vh;
+  height: 100%
+}
+
+.spacer-100vh {
+  height: 100vh;
+  width: 100%;
 }
 </style>

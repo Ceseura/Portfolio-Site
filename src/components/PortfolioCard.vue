@@ -59,7 +59,7 @@ export default {
   position: relative;
   padding: 0;
   margin-left: 5%;
-  margin-bottom: 20%;
+  padding-bottom: 20%;
 }
 
 .clear:after {

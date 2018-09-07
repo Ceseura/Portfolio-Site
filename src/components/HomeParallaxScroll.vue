@@ -31,24 +31,39 @@ export default {
 .parallax-scroll {
   width: 100vw;
   max-width: 100%;
+  background-color: red;
   background-color: var(--parallax-bg-color);
+  margin-top: 105vh;
   position: relative;
-  top: 105vh;
   z-index: 1;
 }
 
+.width-limiter {
+  background-color: var(--parallax-bg-color);
+  width: 100%;
+  max-width: 1200px;
+  padding: 50px;
+  padding-top: 0;
+  padding-bottom: 0;
+  box-sizing: border-box;
+  display: block;
+  margin: auto;
+  position: relative;
+}
+
 .apo-top {
+  position: absolute;
   top: -20vh;
 }
 .apo-bottom {
-  top: 20vh;
+  top: 100%;
+  position: absolute;
 }
 
 .angle-piece-occluder {
   width: 100%;
   height: 20vh;
   overflow: hidden;
-  position: relative;
   pointer-events: none;
 }
 
@@ -67,18 +82,5 @@ export default {
   background-color: var(--parallax-bg-color);
   pointer-events: all;
   z-index: 1;
-}
-
-.width-limiter {
-  background-color: var(--parallax-bg-color);
-  width: 100%;
-  max-width: 1200px;
-  padding: 50px;
-  padding-top: 0;
-  box-sizing: border-box;
-  display: block;
-  margin: auto;
-  position: relative;
-  top: -10vh;
 }
 </style>
