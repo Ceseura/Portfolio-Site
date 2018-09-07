@@ -4,21 +4,24 @@
             <div class='angle-piece' />
         </div>
         <div class='width-limiter'>
-            <DescriptionCard />
-            <PortfolioCard />
+            <Description />
+            <Portfolio />
+            <Contact />
         </div>
     </div>
 </template>
 
 <script>
-import DescriptionCard from '@/components/DescriptionCard.vue';
-import PortfolioCard from '@/components/PortfolioCard.vue';
+import Description from '@/components/DescriptionCard.vue';
+import Portfolio from '@/components/PortfolioCard.vue';
+import Contact from '@/components/ContactCard.vue';
 
 export default {
   name: 'HomeParallaxScroll',
   components: {
-    DescriptionCard,
-    PortfolioCard
+    Description,
+    Portfolio,
+    Contact,
   }
 };
 </script>
@@ -53,8 +56,9 @@ export default {
 .width-limiter {
   background-color: var(--description-bg-color);
   width: 100%;
-  max-width: 1000px;
+  max-width: 900px;
   padding: 50px;
+  box-sizing: border-box;
   display: block;
   margin: auto;
   position: relative;
