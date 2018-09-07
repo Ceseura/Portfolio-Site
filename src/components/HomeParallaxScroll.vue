@@ -1,10 +1,13 @@
 <template>
     <div class='parallax-scroll'>
-        <div class='angle-piece-occluder'>
-            <div class='angle-piece' />
+        <div class='angle-piece-occluder apo-top'>
+          <div class='angle-piece ap-top' />
         </div>
         <div class='width-limiter'>
-            <Portfolio />
+          <Portfolio />
+        </div>
+        <div class='angle-piece-occluder apo-bottom'>
+          <div class='angle-piece ap-bottom' />
         </div>
     </div>
 </template>
@@ -28,10 +31,17 @@ export default {
 .parallax-scroll {
   width: 100vw;
   max-width: 100%;
-  height: auto;
   background-color: var(--parallax-bg-color);
-  position: absolute;
+  position: relative;
   top: 105vh;
+  z-index: 1;
+}
+
+.apo-top {
+  top: -20vh;
+}
+.apo-bottom {
+  top: 20vh;
 }
 
 .angle-piece-occluder {
@@ -39,8 +49,14 @@ export default {
   height: 20vh;
   overflow: hidden;
   position: relative;
-  top: -20vh;
   pointer-events: none;
+}
+
+.ap-top {
+  transform: translate(-10vw, -10vh) rotateZ(-5deg);
+}
+.ap-bottom {
+  transform: translate(-10vw, -30vh) rotateZ(-5deg);
 }
 
 .angle-piece {
@@ -49,7 +65,6 @@ export default {
   width: 120vw;
   height: 20vh;
   background-color: var(--parallax-bg-color);
-  transform: translate(-10vw, -10vh) rotateZ(-5deg);
   pointer-events: all;
   z-index: 1;
 }

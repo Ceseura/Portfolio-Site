@@ -15,6 +15,7 @@ body {
   margin: 0;
   padding: 0;
   --parallax-bg-color: #fffee3;
+  /* --parallax-bg-color: rgba(255, 254, 227, 0.2); */
   --description-bg-color: lightblue;
   --text-color: black;
 }
