@@ -22,6 +22,5 @@ export default {
 
 <style>
 .home {
-  --parallax-text-color: black;
 }
 </style>
