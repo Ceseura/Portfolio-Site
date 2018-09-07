@@ -5,7 +5,6 @@
         </div>
         <div class='width-limiter'>
             <Portfolio />
-            <Contact />
         </div>
     </div>
 </template>

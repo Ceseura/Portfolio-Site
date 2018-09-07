@@ -1,8 +1,8 @@
 <template>
   <div class="home">
     <HomeParallaxImage />
-    <HomeParallaxScroll/>
-    <!-- </HomeParallaxScroll> -->
+    <HomeParallaxScroll />
+    <ContactParallaxBg />
   </div>
 </template>
 
@@ -10,12 +10,14 @@
 // @ is an alias to /src
 import HomeParallaxImage from '@/components/HomeParallaxImage.vue';
 import HomeParallaxScroll from '@/components/HomeParallaxScroll.vue';
+import ContactParallaxBg from '@/components/ContactCard.vue';
 
 export default {
   name: 'home',
   components: {
     HomeParallaxImage,
-    HomeParallaxScroll
+    HomeParallaxScroll,
+    ContactParallaxBg
   }
 };
 </script>

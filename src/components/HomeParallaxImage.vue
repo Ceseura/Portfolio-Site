@@ -3,13 +3,19 @@
       <a href='https://github.com/Karavis'>
         <div class='github link-circle' v-on:mouseenter='show_tooltip(1)' v-on:mouseleave='hide_tooltip(1)'/>
         <div class='occluder height-offset1'>
-          <div class='github-tooltip link-tooltip' v-if='this.show_github'> Github </div>
+          <div class='link-tooltip' v-if='this.show_github'> Github </div>
         </div>
       </a>
       <a href='https://www.linkedin.com/in/alexander-liang-7070b9167/'>
         <div class='linkedin link-circle' v-on:mouseenter='show_tooltip(2)' v-on:mouseleave='hide_tooltip(2)'/>
         <div class='height-offset2 occluder'>
-          <div class='linkedin-tooltip link-tooltip' v-if='this.show_linkedin'> Linkedin </div>
+          <div class='link-tooltip' v-if='this.show_linkedin'> Linkedin </div>
+        </div>
+      </a>
+      <a href='https://drive.google.com/file/d/0Bzt4QEceUnY6NFhXRTIwSy1JMXM/view'>
+        <div class='resume link-circle' v-on:mouseenter='show_tooltip(3)' v-on:mouseleave='hide_tooltip(3)'/>
+        <div class='height-offset3 occluder'>
+          <div class='link-tooltip' v-if='this.show_resume'> Resume </div>
         </div>
       </a>
 
@@ -32,6 +38,8 @@ export default {
     return {
       show_github: false,
       show_linkedin: false,
+      show_resume: false,
+      pdf_location: '../assets/Resume.pdf'
     }
   },
   methods: {
@@ -44,6 +52,8 @@ export default {
         this.show_github = true;
       } else if (i === 2) {
         this.show_linkedin = true;
+      } else if (i === 3) {
+        this.show_resume = true;
       }
     },
     hide_tooltip: function(i) {
@@ -51,6 +61,8 @@ export default {
         this.show_github = false;
       } else if (i === 2) {
         this.show_linkedin = false;
+      } else if (i === 3) {
+        this.show_resume = false;
       }
     }
   }
@@ -69,7 +81,7 @@ export default {
 
 .occluder {
   position: absolute;
-  right: 80px;
+  right: 70px;
   height: 50px;
   width: 100px;
   overflow: hidden;
@@ -83,18 +95,38 @@ export default {
   top: 90px;
 }
 
+.height-offset3 {
+  top: 160px;
+}
+
 .github {
-  background-image: url('../assets/github.png');
+  background-image: url('../assets/github_dark.png');
   background-size: 50px 50px;
   top: 0;
   right: 0;
 }
+.github:hover {
+  background-image: url('../assets/github_light.png');
+}
 
 .linkedin {
-  background-image: url('../assets/linkedin.png');
+  background-image: url('../assets/linkedin_dark.png');
   background-size: 50px 50px;
   top: 70px;
   right: 0;
+}
+.linkedin:hover {
+  background-image: url('../assets/linkedin_light.png');
+}
+
+.resume {
+  background-image: url('../assets/resume_dark.png');
+  background-size: 50px 50px;
+  top: 140px;
+  right: 0;
+}
+.resume:hover {
+  background-image: url('../assets/resume_light.png');
 }
 
 .link-circle {
@@ -116,12 +148,12 @@ export default {
   animation-name: tooltip_enterFromRight;
   animation-duration: 1s;
   top: 15px;
-  right: 0px;
+  right: 10px;
 }
 
 @keyframes tooltip_enterFromRight {
   0% {right: -100px;}
-  100% {right: 0px;}
+  100% {right: 10px;}
 }
 
 .accent-text {

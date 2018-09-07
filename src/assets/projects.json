@@ -25,16 +25,28 @@
       "href_url": "https://github.com/Karavis/cvisionProject"
     },
     {
-        "name": "Hexagon Inspiration",
-        "tags_short": ["Hexagon", "CSS"],
-        "icon_url": "hexagons.png",
-        "href_url": "https://github.com/Karavis/CSS-play"
+      "name": "Hexagon Inspiration",
+      "tags_short": ["Hexagon", "CSS"],
+      "icon_url": "hexagons.png",
+      "href_url": "https://github.com/Karavis/CSS-play"
     },
     {
-        "name": "Relic Appraiser",
-        "tags_short": ["Market Analysis", "WIP"],
-        "icon_url": "warframe.png",
-        "href_url": "https://github.com/Karavis/Relic-Appraiser"
+      "name": "Relic Appraiser",
+      "tags_short": ["Market Analysis", "WIP"],
+      "icon_url": "warframe.png",
+      "href_url": "https://github.com/Karavis/Relic-Appraiser"
+    },
+    {
+      "name": "Spooky Boy",
+      "tags_short": ["Unity", "C#", "A* Pathfinding"],
+      "icon_url": "spooky.png",
+      "href_url": "https://github.com/LIONisaQT/spooky-boye"
+    },
+    {
+      "name": "Droplet",
+      "tags_short": ["React.js", "Redux", "JPA", "Private"],
+      "icon_url": "droplet.png",
+      "href_url": "https://gitlab.com/2018-internship/OSSFT"
     }
   ]
 }
