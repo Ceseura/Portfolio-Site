@@ -42,11 +42,5 @@
       "icon_url": "spooky.png",
       "href_url": "https://github.com/LIONisaQT/spooky-boye"
     },
-    {
-      "name": "Droplet",
-      "tags_short": ["React.js", "Redux", "JPA", "Private"],
-      "icon_url": "droplet.png",
-      "href_url": "https://gitlab.com/2018-internship/OSSFT"
-    }
   ]
 }
