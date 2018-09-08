@@ -45,13 +45,13 @@ export default {
       show_github: false,
       show_linkedin: false,
       show_resume: false,
-      show_email: false,
-    }
+      show_email: false
+    };
   },
   methods: {
-    scrollDown: function () {
+    scrollDown: function() {
       var scrollTarget = document.querySelector('.width-limiter');
-      scrollTarget.scrollIntoView({behavior: 'smooth', block: 'start'});
+      scrollTarget.scrollIntoView({ behavior: 'smooth', block: 'start' });
     },
     show_tooltip: function(i) {
       if (i === 1) {
@@ -114,43 +114,43 @@ export default {
 }
 
 .email {
-  background-image: url('../assets/email_dark.png');
+  background-image: url('../assets/button-presets/email_dark.png');
   background-size: 50px 50px;
   top: 70px;
   right: 0;
 }
 .email:hover {
-  background-image: url('../assets/email_light.png');
+  background-image: url('../assets/button-presets/email_light.png');
 }
 
 .github {
-  background-image: url('../assets/github_dark.png');
+  background-image: url('../assets/button-presets/github_dark.png');
   background-size: 50px 50px;
   top: 0;
   right: 0;
 }
 .github:hover {
-  background-image: url('../assets/github_light.png');
+  background-image: url('../assets/button-presets/github_light.png');
 }
 
 .linkedin {
-  background-image: url('../assets/linkedin_dark.png');
+  background-image: url('../assets/button-presets/linkedin_dark.png');
   background-size: 50px 50px;
   top: 140px;
   right: 0;
 }
 .linkedin:hover {
-  background-image: url('../assets/linkedin_light.png');
+  background-image: url('../assets/button-presets/linkedin_light.png');
 }
 
 .resume {
-  background-image: url('../assets/resume_dark.png');
+  background-image: url('../assets/button-presets/resume_dark.png');
   background-size: 50px 50px;
   top: 210px;
   right: 0;
 }
 .resume:hover {
-  background-image: url('../assets/resume_light.png');
+  background-image: url('../assets/button-presets/resume_light.png');
 }
 
 .link-circle {
@@ -176,8 +176,12 @@ export default {
 }
 
 @keyframes tooltip_enterFromRight {
-  0% {right: -100px;}
-  100% {right: 10px;}
+  0% {
+    right: -100px;
+  }
+  100% {
+    right: 10px;
+  }
 }
 
 .accent-text {
@@ -204,14 +208,14 @@ export default {
   position: absolute;
   top: 85vh;
   left: 50%;
-  transform: translate(-50%,  0) rotate(90deg);
+  transform: translate(-50%, 0) rotate(90deg);
 }
 
 .paintbrush-settings {
   stroke: white;
   stroke-width: 2;
   stroke-linejoin: round;
-  stroke-miterlimit: 10; 
+  stroke-miterlimit: 10;
   fill: none;
 }
 
@@ -230,7 +234,11 @@ export default {
 }
 
 @keyframes animate-circle {
-  0% {stroke-dashoffset: 300}
-  100% {stroke-dashoffset: 0}
+  0% {
+    stroke-dashoffset: 300;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
 }
 </style>

@@ -25,7 +25,7 @@ export default {
 
 <style>
 .home {
-  height: 100%
+  height: 100%;
 }
 
 .spacer-105vh {

@@ -22,7 +22,7 @@ export default {
   components: {
     Description,
     Portfolio,
-    Contact,
+    Contact
   }
 };
 </script>

@@ -6,8 +6,8 @@
                 <li is='Hexagon' 
                   v-for='i in numberHexagons' 
                   v-bind:key='i' 
-                  v-bind:state='hexLayout[i-1]' 
-                  v-bind:hexData='getHexData(hexLayout[i-1])'>
+                  v-bind:state='hexLayout[i - 1]' 
+                  v-bind:hexData='getHexData(hexLayout[i - 1])'>
                 </li>
             </ul>
         </div>
@@ -18,25 +18,22 @@
 import Hexagon from '@/components/PortfolioCardHexagon.vue';
 import data from '@/assets/projects.json';
 
-var a = [1, -1, 6, 0,
-         -1, 2, 4, 0,
-         -1, 3, 0, 7,
-         0, 5, 0];
+var a = [1, -1, 6, 0, -1, 2, 4, 0, -1, 3, 0, 7, 0, 5, 0];
 
 export default {
   components: {
-    Hexagon,
+    Hexagon
   },
   data: function() {
     return {
       numberHexagons: 15,
-      hexLayout: a,
+      hexLayout: a
     };
   },
   methods: {
     getHexData: function(i) {
       if (i > 0) {
-        return data.projects[i-1];
+        return data.projects[i - 1];
       } else {
         return null;
       }

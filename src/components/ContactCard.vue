@@ -68,35 +68,35 @@ export default {};
 }
 
 .email {
-  background-image: url('../assets/email_dark.png');
+  background-image: url('../assets/button-presets/email_dark.png');
   background-size: 50px 50px;
 }
 .email:hover {
-  background-image: url('../assets/email_light.png');
+  background-image: url('../assets/button-presets/email_light.png');
 }
 
 .github {
-  background-image: url('../assets/github_dark.png');
+  background-image: url('../assets/button-presets/github_dark.png');
   background-size: 50px 50px;
 }
 .github:hover {
-  background-image: url('../assets/github_light.png');
+  background-image: url('../assets/button-presets/github_light.png');
 }
 
 .linkedin {
-  background-image: url('../assets/linkedin_dark.png');
+  background-image: url('../assets/button-presets/linkedin_dark.png');
   background-size: 50px 50px;
 }
 .linkedin:hover {
-  background-image: url('../assets/linkedin_light.png');
+  background-image: url('../assets/button-presets/linkedin_light.png');
 }
 
 .resume {
-  background-image: url('../assets/resume_dark.png');
+  background-image: url('../assets/button-presets/resume_dark.png');
   background-size: 50px 50px;
 }
 .resume:hover {
-  background-image: url('../assets/resume_light.png');
+  background-image: url('../assets/button-presets/resume_light.png');
 }
 
 .link-circle {

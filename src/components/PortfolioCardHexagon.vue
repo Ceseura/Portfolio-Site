@@ -19,53 +19,83 @@
 </template>
 
 <script>
-var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'purple'];
-
-var inactiveColors = ['#ffafaf', '#ffa3a3', '#ff8e8e',
-                      '#ffb78e', '#ffdab2', '#deffd3',
-                      '#f1ff8e', '#e1ffb2', '#d3ffe7',
-                      '#c6ff8e', '#c0ffb2', '#d3fff9',
-                      '#8effaa', '#b2ffd1', '#d3f2ff',
-                      '#8effe1', '#b2fff6', '#d3e2ff',
-                      '#8ee6ff', '#b2d3ff', '#d3d3ff',
-                      '#8eaaff', '#c6b2ff', '#e1d3ff',
-                      '#a58eff', '#ebb2ff', '#f4d3ff'];
+var inactiveColors = [
+  '#ffafaf',
+  '#ffa3a3',
+  '#ff8e8e',
+  '#ffb78e',
+  '#ffdab2',
+  '#deffd3',
+  '#f1ff8e',
+  '#e1ffb2',
+  '#d3ffe7',
+  '#c6ff8e',
+  '#c0ffb2',
+  '#d3fff9',
+  '#8effaa',
+  '#b2ffd1',
+  '#d3f2ff',
+  '#8effe1',
+  '#b2fff6',
+  '#d3e2ff',
+  '#8ee6ff',
+  '#b2d3ff',
+  '#d3d3ff',
+  '#8eaaff',
+  '#c6b2ff',
+  '#e1d3ff',
+  '#a58eff',
+  '#ebb2ff',
+  '#f4d3ff'
+];
 
 export default {
   props: {
     state: Number,
-    hexData: Object,
+    hexData: Object
   },
   data: function() {
     return {
       colorStyle: {
-        backgroundColor: inactiveColors[Math.floor(Math.random() * inactiveColors.length)]
+        backgroundColor:
+          inactiveColors[Math.floor(Math.random() * inactiveColors.length)]
       },
       pictureStyle: {
-        backgroundImage: this.state > 0 ? 'url(' + require('../assets/icons/' + this.hexData.icon_url) + ')' : null,
-        backgroundSize: 'contain',
-     },
-      activeStyle: {
-        backgroundImage: this.state > 0 ? 'linear-gradient(rgba(240, 240, 240, 0.8), rgba(240, 240, 240, 0.8)), url(' + require('../assets/icons/' + this.hexData.icon_url) + ')' : null,
-        cursor: 'pointer',
+        backgroundImage:
+          this.state > 0
+            ? 'url(' +
+              require('../assets/hexagon-icons/' + this.hexData.icon_url) +
+              ')'
+            : null,
+        backgroundSize: 'contain'
       },
-      isActive: false,
-    }
+      activeStyle: {
+        backgroundImage:
+          this.state > 0
+            ? 'linear-gradient(rgba(240, 240, 240, 0.8), rgba(240, 240, 240, 0.8)), url(' +
+              require('../assets/hexagon-icons/' + this.hexData.icon_url) +
+              ')'
+            : null,
+        cursor: 'pointer'
+      },
+      isActive: false
+    };
   },
 
   computed: {
     finalStyles: function() {
-      var outStyles = Object.assign({}, 
-                                    this.state > 0 ? this.pictureStyle : this.colorStyle, 
-                                    this.isActive ? this.activeStyle : null);
+      var outStyles = Object.assign(
+        {},
+        this.state > 0 ? this.pictureStyle : this.colorStyle,
+        this.isActive ? this.activeStyle : null
+      );
       return outStyles;
     }
   },
 
   methods: {
     mouseEnter: function() {
-      if (this.state > 0) 
-        this.isActive = true;
+      if (this.state > 0) this.isActive = true;
     },
     mouseLeave: function() {
       this.isActive = false;
@@ -84,7 +114,7 @@ export default {
 /* Oh god what even is going on here rotations and skew are confuse */
 .hexagon-content {
   position: absolute;
-  transform: rotate(-90deg) translate(-7.5%, -7.5%) ;
+  transform: rotate(-90deg) translate(-7.5%, -7.5%);
   width: 115%;
   height: 85%;
   animation-name: content-enterFromBottom;
@@ -102,7 +132,9 @@ export default {
   position: absolute;
   bottom: 50%;
   text-align: center;
-  font-size: calc(1em + 0.7vw);
+  font-size: calc(1em + 0.5vw);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
 }
 
 .hexagon-tag-container {
@@ -117,8 +149,12 @@ export default {
 }
 
 @keyframes content-enterFromBottom {
-  0% {right: calc(-100% - 115%)}
-  100% {right: -15%}
+  0% {
+    right: calc(-100% - 115%);
+  }
+  100% {
+    right: -15%;
+  }
 }
 
 .hexagon-tag {
@@ -133,59 +169,59 @@ export default {
 
 /* 2 columns */
 @media (min-width: 500px) and (max-width: 749px) {
-.responsive-hexagon {
-  width: 45.1285714285%;
-  padding: 0 0 52.1115143517% 0;
-}
-.hexagon-outer:nth-child(2n) {
-  margin-left: -2%;
-  margin-right: -2%;
-  transform: translateY(46%) rotate(30deg) skewY(30deg);
-}
+  .responsive-hexagon {
+    width: 45.1285714285%;
+    padding: 0 0 52.1115143517% 0;
+  }
+  .hexagon-outer:nth-child(2n) {
+    margin-left: -2%;
+    margin-right: -2%;
+    transform: translateY(46%) rotate(30deg) skewY(30deg);
+  }
 }
 
 /* 3 columns */
-@media (min-width: 750px) and (max-width: 999px){
-.responsive-hexagon {
-  width: 32.5928571428%;
-  padding: 0 0 37.6360936984% 0;
-}
-.hexagon-outer:nth-child(3n+2) {
-  margin-left: -2%;
-  margin-right: -2%;
-  transform: translateY(46%) rotate(30deg) skewY(30deg);
-}
+@media (min-width: 750px) and (max-width: 999px) {
+  .responsive-hexagon {
+    width: 32.5928571428%;
+    padding: 0 0 37.6360936984% 0;
+  }
+  .hexagon-outer:nth-child(3n + 2) {
+    margin-left: -2%;
+    margin-right: -2%;
+    transform: translateY(46%) rotate(30deg) skewY(30deg);
+  }
 }
 
 /* 4 columns */
-@media (min-width: 1000px) and (max-width:1249px) {
-.responsive-hexagon {
-  width: 24.8207142857%;
-  padding: 0 0 28.6613328934% 0;
-}
-.hexagon-outer:nth-child(2n) {
-  margin-left: -2%;
-  margin-right: -2%;
-  transform: translateY(46%) rotate(30deg) skewY(30deg);
-}
+@media (min-width: 1000px) and (max-width: 1249px) {
+  .responsive-hexagon {
+    width: 24.8207142857%;
+    padding: 0 0 28.6613328934% 0;
+  }
+  .hexagon-outer:nth-child(2n) {
+    margin-left: -2%;
+    margin-right: -2%;
+    transform: translateY(46%) rotate(30deg) skewY(30deg);
+  }
 }
 
 /* 5 columns */
 @media (min-width: 1250px) {
-.responsive-hexagon {
-  width: 19.8565714286%;
-  padding: 0 0 22.9290663147% 0;
-}
-.hexagon-outer:nth-child(5n+2) {
-  margin-left: -2%;
-  margin-right: -2%;
-  transform: translateY(46%) rotate(30deg) skewY(30deg);
-}
-.hexagon-outer:nth-child(5n+4) {
-  margin-left: -2%;
-  margin-right: -2%;
-  transform: translateY(46%) rotate(30deg) skewY(30deg);
-}
+  .responsive-hexagon {
+    width: 19.8565714286%;
+    padding: 0 0 22.9290663147% 0;
+  }
+  .hexagon-outer:nth-child(5n + 2) {
+    margin-left: -2%;
+    margin-right: -2%;
+    transform: translateY(46%) rotate(30deg) skewY(30deg);
+  }
+  .hexagon-outer:nth-child(5n + 4) {
+    margin-left: -2%;
+    margin-right: -2%;
+    transform: translateY(46%) rotate(30deg) skewY(30deg);
+  }
 }
 
 .hexagon-outer {
