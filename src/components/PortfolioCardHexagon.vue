@@ -4,14 +4,14 @@
             v-on:mouseenter='mouseEnter'
             v-on:mouseleave='mouseLeave'
             v-if='this.state != -1'>
-          <div class='bg-image' v-bind:style='finalStyles' />
-          <a class='hexagon-content' v-if='this.isActive' v-bind:href='this.hexData.href_url'>
+          <div class='bg-image' v-bind:style='finalStyles' v-on:click='state > 0 ? $emit("view-details", hexData.id) : null'/>
+          <a class='hexagon-content' v-if='this.isActive'>
             <div class='hexagon-title'> {{ this.hexData.name }} </div>
-            <div class='hexagon-tag-container'>
+            <!-- <div class='hexagon-tag-container'>
               <div class='hexagon-tag' 
                 v-for='tag in this.hexData.tags_short'
                 v-bind:key='tag'> {{tag}} </div>
-            </div>    
+            </div>     -->
           </a>
 
         </div>
@@ -119,6 +119,7 @@ export default {
   height: 85%;
   animation-name: content-enterFromBottom;
   animation-duration: 0.3s;
+  pointer-events: none;
 }
 
 .hexagon-content:hover {
@@ -168,7 +169,7 @@ export default {
 }
 
 /* 2 columns */
-@media (min-width: 500px) and (max-width: 749px) {
+@media (min-width: 666px) and (max-width: 999px) {
   .responsive-hexagon {
     width: 45.1285714285%;
     padding: 0 0 52.1115143517% 0;
@@ -181,7 +182,7 @@ export default {
 }
 
 /* 3 columns */
-@media (min-width: 750px) and (max-width: 999px) {
+@media (min-width: 1000px) and (max-width: 1332px) {
   .responsive-hexagon {
     width: 32.5928571428%;
     padding: 0 0 37.6360936984% 0;
@@ -194,7 +195,7 @@ export default {
 }
 
 /* 4 columns */
-@media (min-width: 1000px) and (max-width: 1249px) {
+@media (min-width: 1333px) and (max-width: 1665px) {
   .responsive-hexagon {
     width: 24.8207142857%;
     padding: 0 0 28.6613328934% 0;
@@ -207,7 +208,7 @@ export default {
 }
 
 /* 5 columns */
-@media (min-width: 1250px) {
+@media (min-width: 1665px) {
   .responsive-hexagon {
     width: 19.8565714286%;
     padding: 0 0 22.9290663147% 0;

@@ -1,42 +1,49 @@
 {
   "projects": [
     {
+      "id": 0,
       "name": "This Website",
       "tags_short": ["Vue.js", "Html5", "CSS"],
       "icon_url": "mysite.png",
       "href_url": "https://github.com/Karavis/Portfolio-Site"
     },
     {
+      "id": 1,
       "name": "Kojai.tv",
       "tags_short": ["Bootstrap", "Django", "Heroku"],
       "icon_url": "kojai.png",
       "href_url": "https://github.com/mmw5hy/Kojai"
     },
     {
+      "id": 2,
       "name": "Shardbound Cardbot",
       "tags_short": ["Python", "AWS", "praw", "lxml"],
       "icon_url": "shardbound.png",
       "href_url": "https://github.com/Karavis/ShardboundCardBot"
     },
     {
+      "id": 3,
       "name": "Face Recognizer",
       "tags_short": ["AI", "OpenCV", "Eigenface"],
       "icon_url": "face_detection.png",
       "href_url": "https://github.com/Karavis/cvisionProject"
     },
     {
+      "id": 4,
       "name": "Hexagon Inspiration",
       "tags_short": ["Hexagon", "CSS"],
       "icon_url": "hexagons.png",
       "href_url": "https://github.com/Karavis/CSS-play"
     },
     {
+      "id": 5,
       "name": "Relic Appraiser",
       "tags_short": ["Market Analysis", "WIP"],
       "icon_url": "warframe.png",
       "href_url": "https://github.com/Karavis/Relic-Appraiser"
     },
     {
+      "id": 6,
       "name": "Spooky Boy",
       "tags_short": ["Unity", "C#", "A* Pathfinding"],
       "icon_url": "spooky.png",

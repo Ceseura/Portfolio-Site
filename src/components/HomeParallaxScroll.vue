@@ -3,8 +3,14 @@
         <div class='angle-piece-occluder apo-top'>
           <div class='angle-piece ap-top' />
         </div>
-        <div class='width-limiter'>
-          <Portfolio />
+        <div class='width-limiter' id='width-limiter'>
+          <Portfolio v-on:view-details='viewDetails' 
+                     v-bind:isCentered='!seeMoreInfo' 
+                     v-bind:stateChange='stateChange'
+                     v-bind:hexData='projects'/>
+          <PortfolioInfo v-bind:visible='seeMoreInfo' 
+                         v-bind:stateChange='stateChange'
+                         v-bind:hexData='projects'/>
         </div>
         <div class='angle-piece-occluder apo-bottom'>
           <div class='angle-piece ap-bottom' />
@@ -16,13 +22,115 @@
 import Description from '@/components/DescriptionCard.vue';
 import Portfolio from '@/components/PortfolioCard.vue';
 import Contact from '@/components/ContactCard.vue';
+import PortfolioInfo from '@/components/PortfolioInfo.vue';
+import projects from '@/assets/projects.json';
+
+let currY = 0;
 
 export default {
-  name: 'HomeParallaxScroll',
   components: {
     Description,
     Portfolio,
-    Contact
+    Contact,
+    PortfolioInfo
+  },
+  data: function() {
+    return {
+      seeMoreInfo: false,
+      stateChange: false,
+      projects: projects,
+    };
+  },
+  methods: {
+    viewDetails: function() {
+      this.openInfoWindow();
+    },
+
+    scrollHandlerUp: function() {this.scrollHandler(0)},
+    scrollHandlerDown: function() {this.scrollHandler(1)},
+
+    // Ensures vertical scrolling finishes before horizontal scrolling
+    scrollHandler: function(upOrDown) {
+      // TODO: Uhh theres probably a better way than repeating all of this...
+      // Constants
+      let scrollY = window.pageYOffset;
+
+      let view_height = document.documentElement.clientHeight; // 943
+      // let page_height = document.documentElement.scrollHeight; // 2998
+      let hexagons_bcr = document
+        .getElementById('width-limiter')
+        .getBoundingClientRect(); // positions are relative to viewport
+      let el_body = document.body;
+
+      // Convert positions to absolute (relative to page instead of viewport)
+      let viewport_top = scrollY;
+      let viewport_bottom = scrollY + view_height;
+      let hexagons_top = hexagons_bcr.top + scrollY;
+      let hexagons_bottom = hexagons_bcr.bottom + scrollY;
+
+      if (upOrDown === 0 && hexagons_top <= viewport_top) {
+        window.removeEventListener('scroll', this.scrollHandlerUp);
+        this.seeMoreInfo = true;
+        this.stateChange = true;
+        setTimeout(() => this.setUpWindowCloseHandler(), 200);
+        setTimeout(() => el_body.classList.remove('no-scroll'), 500);
+
+      } else if (upOrDown === 1 && hexagons_bottom >= viewport_bottom) {
+        window.removeEventListener('scroll', this.scrollHandlerDown);
+        this.seeMoreInfo = true;
+        this.stateChange = true;
+        setTimeout(() => this.setUpWindowCloseHandler(), 200);
+        setTimeout(() => el_body.classList.remove('no-scroll'), 500);
+      }
+    },
+
+    // Scrolls to the appropriate Y and opens the info window
+    openInfoWindow: function() {
+      // Constants
+      let scrollY = window.pageYOffset;
+      let view_height = document.documentElement.clientHeight; // 943
+      let hexagons_bcr = document
+        .getElementById('width-limiter')
+        .getBoundingClientRect(); // positions are relative to viewport
+      let el_body = document.body;
+
+      // Convert positions to absolute (relative to page instead of viewport)
+      let viewport_top = scrollY;
+      let viewport_bottom = scrollY + view_height;
+      let hexagons_top = hexagons_bcr.top + scrollY;
+      let hexagons_bottom = hexagons_bcr.bottom + scrollY;
+
+      el_body.classList.add('no-scroll');
+
+      // Scroll down
+      if (hexagons_top > viewport_top) {
+        window.scrollTo({ top: hexagons_top + 10, behavior: 'smooth' });
+        window.addEventListener('scroll', this.scrollHandlerUp)
+      } else if (hexagons_bottom < viewport_bottom) {
+      // Scroll up
+        window.scrollTo({
+          top: hexagons_bottom - view_height - 10,
+          behavior: 'smooth'
+        });
+        window.addEventListener('scroll', this.scrollHandlerDown)
+      } else {
+        this.seeMoreInfo = true;
+        this.stateChange = true;
+        this.setUpWindowCloseHandler();
+        setTimeout(() => el_body.classList.remove('no-scroll'), 500);
+      }
+    },
+
+    setUpWindowCloseHandler: function() {
+      currY = window.pageYOffset;
+      window.addEventListener('scroll', this.scrollLockToY);
+    },
+
+    scrollLockToY: function() {
+      this.seeMoreInfo = false;
+      window.scrollTo({top: currY});
+      setTimeout(() => window.removeEventListener('scroll', this.scrollLockToY), 500);
+    }
   }
 };
 </script>
@@ -41,7 +149,7 @@ export default {
 .width-limiter {
   background-color: var(--parallax-bg-color);
   width: 100%;
-  max-width: 1200px;
+  /* max-width: 1200px; */
   padding: 50px;
   padding-top: 0;
   padding-bottom: 0;
@@ -84,3 +192,11 @@ export default {
   z-index: 1;
 }
 </style>
+
+<style>
+.no-scroll {
+  height: 100%;
+  overflow: hidden;
+}
+</style>
+
