@@ -10,7 +10,8 @@
                      v-bind:hexData='projects'/>
           <PortfolioInfo v-bind:visible='seeMoreInfo' 
                          v-bind:stateChange='stateChange'
-                         v-bind:hexData='projects'/>
+                         v-bind:hexData='projects'
+                         v-bind:id='id'/>
         </div>
         <div class='angle-piece-occluder apo-bottom'>
           <div class='angle-piece ap-bottom' />
@@ -39,10 +40,12 @@ export default {
       seeMoreInfo: false,
       stateChange: false,
       projects: projects,
+      id: -1,
     };
   },
   methods: {
-    viewDetails: function() {
+    viewDetails: function(id) {
+      this.id = id;
       this.openInfoWindow();
     },
 
@@ -73,14 +76,14 @@ export default {
         this.seeMoreInfo = true;
         this.stateChange = true;
         setTimeout(() => this.setUpWindowCloseHandler(), 200);
-        setTimeout(() => el_body.classList.remove('no-scroll'), 500);
+        setTimeout(() => el_body.classList.remove('no-scroll'), 1000);
 
       } else if (upOrDown === 1 && hexagons_bottom >= viewport_bottom) {
         window.removeEventListener('scroll', this.scrollHandlerDown);
         this.seeMoreInfo = true;
         this.stateChange = true;
         setTimeout(() => this.setUpWindowCloseHandler(), 200);
-        setTimeout(() => el_body.classList.remove('no-scroll'), 500);
+        setTimeout(() => el_body.classList.remove('no-scroll'), 1000);
       }
     },
 
@@ -117,7 +120,7 @@ export default {
         this.seeMoreInfo = true;
         this.stateChange = true;
         this.setUpWindowCloseHandler();
-        setTimeout(() => el_body.classList.remove('no-scroll'), 500);
+        setTimeout(() => el_body.classList.remove('no-scroll'), 1000);
       }
     },
 
@@ -129,7 +132,7 @@ export default {
     scrollLockToY: function() {
       this.seeMoreInfo = false;
       window.scrollTo({top: currY});
-      setTimeout(() => window.removeEventListener('scroll', this.scrollLockToY), 500);
+      setTimeout(() => window.removeEventListener('scroll', this.scrollLockToY), 1000);
     }
   }
 };
@@ -149,7 +152,6 @@ export default {
 .width-limiter {
   background-color: var(--parallax-bg-color);
   width: 100%;
-  /* max-width: 1200px; */
   padding: 50px;
   padding-top: 0;
   padding-bottom: 0;

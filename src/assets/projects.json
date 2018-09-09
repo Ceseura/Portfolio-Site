@@ -3,51 +3,65 @@
     {
       "id": 0,
       "name": "This Website",
-      "tags_short": ["Vue.js", "Html5", "CSS"],
+      "tags": ["Vue.js", "Html5", "CSS3", "Animation", "Parallax", "UX Design", "Transitions", "SVG", "Responsive"],
       "icon_url": "mysite.png",
-      "href_url": "https://github.com/Karavis/Portfolio-Site"
+      "github_url": "https://github.com/Karavis/Portfolio-Site",
+      "link_url": null,
+      "description": "This website was created as a means of showcasing my past work. It contains a sample of the projects I have worked on in the past. Additionally, I used this website to experiment with CSS animations and graphic design."
     },
     {
       "id": 1,
       "name": "Kojai.tv",
-      "tags_short": ["Bootstrap", "Django", "Heroku"],
+      "tags": ["Django", "Bootstrap", "Heroku", "SQLite", "Video Hosting", "Authentication"],
       "icon_url": "kojai.png",
-      "href_url": "https://github.com/mmw5hy/Kojai"
+      "github_url": "https://github.com/mmw5hy/Kojai",
+      "link_url": "http://www.kojai.tv/videos/",
+      "description": "Kojai.tv is a video sharing platform where users can upload and view videos, and interact with other users by leaving comments. Uploaded videos are hosted on an Amazon S3 bucket and the application is deployed on Heroku."
     },
     {
       "id": 2,
-      "name": "Shardbound Cardbot",
-      "tags_short": ["Python", "AWS", "praw", "lxml"],
+      "name": "Shardbound Card Bot",
+      "tags": ["Python3", "PRAW", "lxml", "virtualenv", "AWS", "Bash", "Task Scheduling"],
       "icon_url": "shardbound.png",
-      "href_url": "https://github.com/Karavis/ShardboundCardBot"
+      "github_url": "https://github.com/Karavis/ShardboundCardBot",
+      "link_url": null,
+      "description": "Shardbound was an innovative blend between a CCG and a Turn-Based Strategy game developed by Spiritwalk games. I developed a reddit/discord bot which would continuously monitor users, and would respond to requests with information about specific cards. Shardbound was shut down in Steam Early Access on 24 January 2017 due to lack of funding."
     },
     {
       "id": 3,
       "name": "Face Recognizer",
-      "tags_short": ["AI", "OpenCV", "Eigenface"],
+      "tags": ["Python2", "OpenCV", "Eigenfaces", "Machine Learning", "Classifier", "Image Processing"],
       "icon_url": "face_detection.png",
-      "href_url": "https://github.com/Karavis/cvisionProject"
+      "github_url": "https://github.com/Karavis/cvisionProject",
+      "link_url": null,
+      "description": "This is the final project for my Computer Vision class. I trained a facial recognizer/classifier using Python and OpenCV. The algorithm was able to differentiate between ten people with a 80% accuracy rate."
     },
     {
       "id": 4,
       "name": "Hexagon Inspiration",
-      "tags_short": ["Hexagon", "CSS"],
+      "tags": ["Hexagon", "CSS3", "JQuery", "Animation", "Design"],
       "icon_url": "hexagons.png",
-      "href_url": "https://github.com/Karavis/CSS-play"
+      "github_url": "https://github.com/Karavis/CSS-play",
+      "link_url": null,
+      "description": "This is the first proof of concept of the hexagon pattern that I use everywhere. Also was one of my first attempts at designing nice interfaces without just using bootstrap."
     },
     {
       "id": 5,
       "name": "Relic Appraiser",
-      "tags_short": ["Market Analysis", "WIP"],
+      "tags": ["Market Analysis", "WIP"],
       "icon_url": "warframe.png",
-      "href_url": "https://github.com/Karavis/Relic-Appraiser"
+      "github_url": "https://github.com/Karavis/Relic-Appraiser",
+      "link_url": null,
+      "description": "This is still under construction."
     },
     {
       "id": 6,
       "name": "Spooky Boy",
-      "tags_short": ["Unity", "C#", "A* Pathfinding"],
+      "tags": ["Unity", "C#", "A* Pathfinding", "Vector Math", "2D Raycasting"],
       "icon_url": "spooky.png",
-      "href_url": "https://github.com/LIONisaQT/spooky-boye"
+      "github_url": "https://github.com/LIONisaQT/spooky-boye",
+      "link_url": null,
+      "description": "Spooky Boy was developed in 48 hours for the Game Maker's Toolkit 2018 Game Jam, theme: <i>Genre</i> without <i>Mechanic</i>. The player attempts to escort a slow-moving robot to the end of level while distracting guards. Unfortunately, the player is a ghost and cannot directly interact with the game."
     }
   ]
 }

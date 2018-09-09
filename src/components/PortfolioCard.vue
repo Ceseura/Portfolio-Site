@@ -17,7 +17,6 @@
 
 <script>
 import Hexagon from '@/components/PortfolioCardHexagon.vue';
-import data from '@/assets/projects.json';
 
 var a = [
   1,
@@ -69,7 +68,7 @@ export default {
   props: {
     isCentered: Boolean,
     stateChange: Boolean,
-    hexData: Object,
+    hexData: Object
   },
   methods: {
     getHexData: function(i) {
@@ -131,7 +130,7 @@ export default {
   color: var(--text-color);
   font-size: 60px;
   font-family: 'Montserrat', sans-serif;
-  width: 100%;
+  width: 90%;
   border-bottom: 1px solid var(--text-color);
 }
 

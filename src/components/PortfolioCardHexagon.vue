@@ -7,11 +7,6 @@
           <div class='bg-image' v-bind:style='finalStyles' v-on:click='state > 0 ? $emit("view-details", hexData.id) : null'/>
           <a class='hexagon-content' v-if='this.isActive'>
             <div class='hexagon-title'> {{ this.hexData.name }} </div>
-            <!-- <div class='hexagon-tag-container'>
-              <div class='hexagon-tag' 
-                v-for='tag in this.hexData.tags_short'
-                v-bind:key='tag'> {{tag}} </div>
-            </div>     -->
           </a>
 
         </div>
