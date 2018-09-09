@@ -1,7 +1,7 @@
 <template>
     <div class='contact-card'>
       <div class='my-name'> Alexander Liang </div>
-      <div class='contact-icon-box'>
+      <div class='contact-icon-box cib-responsive'>
         <div class='circle-decor'/>
         <a href='https://github.com/Karavis'>
           <div class='github link-circle'/>
@@ -38,7 +38,8 @@ export default {};
 }
 
 .my-name {
-  width: 100%;
+  width: 80%;
+  padding: 0 10%;
   text-align: center;
   position: absolute;
   top: 50%;
@@ -54,22 +55,35 @@ export default {};
 .contact-icon-box {
   position: absolute;
   top: 62.5%;
-  left: 65%;
   transform: translate(-50%, -50%);
+  width: 50%;
+  max-width: 500px;
+}
+
+@media (min-width: 1400px) {
+  .cib-responsive {
+    left: 65%;
+  }
+}
+
+@media (max-width: 1399px) {
+  .cib-responsive {
+    left: 50%;
+  }
 }
 
 .circle-decor {
   background-color: cyan;
-  width: 20px;
-  height: 20px;
-  border-radius: 10px;
-  margin: 15px 20px;
+  width: 3%;
+  padding-top: 3%;
+  border-radius: 50%;
+  margin: 15px 1.5%;
   display: inline-block;
 }
 
 .email {
   background-image: url('../assets/button-presets/email_dark.png');
-  background-size: 50px 50px;
+  background-size: cover;
 }
 .email:hover {
   background-image: url('../assets/button-presets/email_light.png');
@@ -77,7 +91,7 @@ export default {};
 
 .github {
   background-image: url('../assets/button-presets/github_dark.png');
-  background-size: 50px 50px;
+  background-size: cover;
 }
 .github:hover {
   background-image: url('../assets/button-presets/github_light.png');
@@ -85,7 +99,7 @@ export default {};
 
 .linkedin {
   background-image: url('../assets/button-presets/linkedin_dark.png');
-  background-size: 50px 50px;
+  background-size: cover;
 }
 .linkedin:hover {
   background-image: url('../assets/button-presets/linkedin_light.png');
@@ -93,16 +107,16 @@ export default {};
 
 .resume {
   background-image: url('../assets/button-presets/resume_dark.png');
-  background-size: 50px 50px;
+  background-size: cover;
 }
 .resume:hover {
   background-image: url('../assets/button-presets/resume_light.png');
 }
 
 .link-circle {
-  height: 50px;
-  width: 50px;
-  margin: 0 20px;
+  width: 10%;
+  padding-top: 10%;
+  margin: 0 5%;
   display: inline-block;
 }
 

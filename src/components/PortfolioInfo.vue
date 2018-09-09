@@ -65,8 +65,8 @@ export default {
 
 .button-box {
   position: absolute;
-  top: 20%;
-  left: 5%;
+  top: 0;
+  left: -10%;
   width: 5%;
 }
 
@@ -107,9 +107,10 @@ export default {
 
 .item-info-box {
   width: 70%;
-  margin-left: 15%;
-  margin-right: 15%;
-  margin-top: 25%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .item-info-tags {
@@ -121,7 +122,7 @@ export default {
 .item-info-tag {
   color: white;
   font-family: 'Montserrat', sans-serif;
-  font-size: calc(0.7em + 0.5vw);
+  font-size: calc(0.3em + 0.8vw);
   border: 1px solid white;
   display: inline-block;
   padding: 5px 20px;

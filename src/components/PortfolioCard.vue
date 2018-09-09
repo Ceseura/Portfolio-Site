@@ -75,6 +75,7 @@ export default {
   width: 60vw;
   padding-top: 50px;
   margin-left: 20%;
+  min-height: 100vh;
 }
 
 .lefted {

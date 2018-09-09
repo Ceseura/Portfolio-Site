@@ -1,5 +1,6 @@
 <template>
     <div class='parallax-image'>
+      <div class='mobile-warning mw-responsive'> Warning: this site is not designed for small screens! Please come back on a larger device for the intended experience. </div>
       <a href='https://github.com/Karavis'>
         <div class='github link-circle' v-on:mouseenter='show_tooltip(1)' v-on:mouseleave='hide_tooltip(1)'/>
         <div class='occluder height-offset1'>
@@ -87,6 +88,32 @@ export default {
   background-image: url('../assets/tilable1.jpg');
   position: fixed;
   top: 0;
+}
+
+@media (max-width: 665px) {
+  .mw-responsive {
+    visibility: show;;
+  }
+}
+
+@media (min-width: 666px) {
+  .mw-responsive {
+    visibility: hidden;
+  }
+}
+
+.mobile-warning {
+  position: absolute;
+  left: 50%;
+  top: 15%;
+  transform: translate(-50%, -50%);
+  padding: 10px 10px;
+  color: black;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: calc(1em + 0.3vw);
+  background-color: rgb(255, 127, 127);
+  border-radius: 10px;
 }
 
 .occluder {
@@ -191,7 +218,8 @@ export default {
 }
 
 .centered-text {
-  width: 100%;
+  padding: 0 10%;
+  width: 80%;
   text-align: center;
   position: absolute;
   top: 40%;
