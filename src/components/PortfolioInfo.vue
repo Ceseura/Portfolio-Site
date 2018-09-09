@@ -60,6 +60,7 @@ export default {
   position: fixed;
   top: 0;
   left: 100vw;
+  z-index: 5;
 }
 
 .button-box {
