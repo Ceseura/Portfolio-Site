@@ -1,5 +1,5 @@
 <template>
-    <div class='parallax-scroll' v-on:click='closeInfo'>
+    <div class='parallax-scroll'>
         <div class='angle-piece-occluder apo-top'>
           <div class='angle-piece ap-top' />
         </div>
@@ -7,7 +7,8 @@
           <Portfolio v-on:view-details='viewDetails' 
                      v-bind:isCentered='!seeMoreInfo' 
                      v-bind:stateChange='stateChange'
-                     v-bind:hexData='projects'/>
+                     v-bind:hexData='projects'
+                      v-on:click.native='closeInfo'/>
           <PortfolioInfo v-bind:visible='seeMoreInfo' 
                          v-bind:stateChange='stateChange'
                          v-bind:hexData='projects'
@@ -45,6 +46,7 @@ export default {
   },
   methods: {
     closeInfo: function() {
+      console.log("close");
       if (this.seeMoreInfo) {
         this.seeMoreInfo = false;
         setTimeout(() => document.body.classList.remove('no-scroll'), 1000);
