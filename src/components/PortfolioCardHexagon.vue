@@ -4,7 +4,7 @@
             v-on:mouseenter='mouseEnter'
             v-on:mouseleave='mouseLeave'
             v-if='this.state != -1'>
-          <div class='bg-image' v-bind:style='finalStyles' v-on:click='state > 0 ? $emit("view-details", hexData.id) : null'/>
+          <div class='bg-image' v-bind:style='finalStyles' v-on:click='state > 0 ? $emit("view-details", hexData.id, $event) : null'/>
           <a class='hexagon-content' v-if='this.isActive'>
             <div class='hexagon-title'> {{ this.hexData.name }} </div>
           </a>

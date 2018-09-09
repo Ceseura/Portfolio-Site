@@ -1,5 +1,5 @@
 <template>
-    <div class='parallax-scroll'>
+    <div class='parallax-scroll' v-on:click='closeInfo'>
         <div class='angle-piece-occluder apo-top'>
           <div class='angle-piece ap-top' />
         </div>
@@ -44,6 +44,13 @@ export default {
     };
   },
   methods: {
+    closeInfo: function() {
+      if (this.seeMoreInfo) {
+        this.seeMoreInfo = false;
+        setTimeout(() => document.body.classList.remove('no-scroll'), 1000);
+      }
+    },
+
     viewDetails: function(id) {
       this.id = id;
       this.openInfoWindow();
@@ -89,7 +96,6 @@ export default {
 
     // Scrolls to the appropriate Y and opens the info window
     openInfoWindow: function() {
-      console.log("Opening window");
       // Constants
       let scrollY = window.pageYOffset;
       let view_height = document.documentElement.clientHeight; // 943
@@ -108,11 +114,9 @@ export default {
 
       // Scroll down
       if (hexagons_top > viewport_top) {
-        console.log("scrolling down");
         window.scrollTo({ top: hexagons_top + 10, behavior: 'smooth' });
         window.addEventListener('scroll', this.scrollHandlerUp)
       } else if (hexagons_bottom < viewport_bottom) {
-        console.log("scrolling up");
       // Scroll up
         window.scrollTo({
           top: hexagons_bottom - view_height - 10,
@@ -120,7 +124,6 @@ export default {
         });
         window.addEventListener('scroll', this.scrollHandlerDown)
       } else {
-        console.log("no scroll needed");
         this.seeMoreInfo = true;
         this.stateChange = true;
         this.setUpWindowCloseHandler();
@@ -131,15 +134,12 @@ export default {
     setUpWindowCloseHandler: function() {
       currY = window.pageYOffset;
       window.addEventListener('scroll', this.scrollLockToY);
-      console.log("added close listener");
     },
 
     scrollLockToY: function() {
-      console.log("close me!");
       this.seeMoreInfo = false;
       window.scrollTo({top: currY});
       window.removeEventListener('scroll', this.scrollLockToY);
-      console.log("close listener triggered");
     }
   }
 };

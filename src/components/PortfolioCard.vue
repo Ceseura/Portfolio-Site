@@ -63,7 +63,8 @@ export default {
         return null;
       }
     },
-    viewDetails: function(id) {
+    viewDetails: function(id, event) {
+      event.stopPropagation();
       this.$emit('view-details', id);
     }
   }
