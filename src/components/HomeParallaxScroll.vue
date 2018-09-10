@@ -161,7 +161,7 @@ export default {
 .width-limiter {
   background-color: var(--parallax-bg-color);
   width: 100%;
-  padding: 50px;
+  padding: 50px 0;
   padding-top: 0;
   padding-bottom: 0;
   box-sizing: border-box;

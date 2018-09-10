@@ -6,10 +6,14 @@
       <div class='item-info-box'>
         <div class='button-box'>
           <a v-bind:href='myHexData.github_url'>
-            <div class='item-github-link'/>
+            <div class='item-button'>
+              <div class='item-github-link'/>
+            </div>
           </a>
           <a v-bind:href='myHexData.link_url'>
-            <div class='item-link' v-bind:class='[myHexData.link_url ? null : "item-link-inactive"]'/>
+            <div v-bind:class='myHexData.link_url ? "item-button" : "disabled-button"'>
+              <div class='item-link' v-bind:class='[myHexData.link_url ? null : "item-link-inactive"]'/>
+            </div>
           </a>
         </div>
         <div class='item-info-title'>{{this.myHexData.name}}</div>
@@ -54,7 +58,7 @@ export default {
 
 <style scoped>
 .portfolio-info {
-  background-color: rgb(0, 190, 190);
+  background-color: #00bebe;
   height: 100vh;
   width: 40vw;
   position: fixed;
@@ -66,8 +70,33 @@ export default {
 .button-box {
   position: absolute;
   top: 0;
-  left: -10%;
-  width: 5%;
+  right: 102.5%;
+  width: 15%;
+  min-width: 30px;
+  max-width: 50px;
+}
+
+.item-button {
+  background-color: #00bebe;
+  border-radius: 10px;
+  padding: 0 10px;
+  border: 1px solid white;
+  margin-bottom: 40%;
+  cursor: pointer;
+}
+
+.item-button:hover {
+  background-color: #008b8b;
+  border: transparent;
+}
+
+.disabled-button {
+  background-color: #00bebe;
+  border-radius: 10px;
+  padding: 0 10px;
+  border: 1px solid white;
+  margin-bottom: 40%;
+  cursor: not-allowed;
 }
 
 .item-github-link {
@@ -75,12 +104,6 @@ export default {
   background-size: cover;
   width: 100%;
   padding-top: 100%;
-  margin-bottom: 40%;
-}
-
-.item-github-link:hover {
-  cursor: pointer;
-  background-image: url('../assets/button-presets/source_dark.png');
 }
 
 .item-link {
@@ -90,27 +113,16 @@ export default {
   padding-top: 100%;
 }
 
-.item-link:hover {
-  cursor: pointer;
-  background-image: url('../assets/button-presets/link_dark.png');
-}
-
 .item-link-inactive {
   background-image: url('../assets/button-presets/link_grey.png');
-  cursor: not-allowed;
-}
-
-.item-link-inactive:hover {
-  background-image: url('../assets/button-presets/link_grey.png');
-  cursor: not-allowed;
 }
 
 .item-info-box {
   width: 70%;
   position: absolute;
-  top: 50%;
+  top: 15%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, 0);
 }
 
 .item-info-tags {

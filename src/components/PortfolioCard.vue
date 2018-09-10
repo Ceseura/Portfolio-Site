@@ -23,11 +23,11 @@ var a = [
   0,
   6,
   0,
-  -1,
+  0,
   2,
   4,
   0,
-  -1,
+  0,
   3,
   0,
   0,
@@ -35,7 +35,7 @@ var a = [
   5,
   0,
   0,
-  -1,
+  0,
   0,
   0,
   7
@@ -117,7 +117,6 @@ export default {
   color: var(--text-color);
   font-size: 60px;
   font-family: 'Montserrat', sans-serif;
-  width: 90%;
   border-bottom: 1px solid var(--text-color);
 }
 

@@ -163,12 +163,21 @@ export default {
   border-bottom: 2px solid black;
 }
 
+.responsive-hexagon {
+  /* width: 220px;
+  padding-top: 254px; */
+  width: 200px;
+  padding-top: 231px;
+}
+
+/* width * factor: 1.15473441109 */
+
 /* 2 columns */
-@media (min-width: 666px) and (max-width: 999px) {
-  .responsive-hexagon {
+@media (min-width: 700px) and (max-width: 1014px) {
+  /* .responsive-hexagon {
     width: 45.1285714285%;
     padding: 0 0 52.1115143517% 0;
-  }
+  } */
   .hexagon-outer:nth-child(2n) {
     margin-left: -2%;
     margin-right: -2%;
@@ -177,11 +186,11 @@ export default {
 }
 
 /* 3 columns */
-@media (min-width: 1000px) and (max-width: 1332px) {
-  .responsive-hexagon {
+@media (min-width: 1015px) and (max-width: 1349px) {
+  /* .responsive-hexagon {
     width: 32.5928571428%;
     padding: 0 0 37.6360936984% 0;
-  }
+  } */
   .hexagon-outer:nth-child(3n + 2) {
     margin-left: -2%;
     margin-right: -2%;
@@ -190,11 +199,11 @@ export default {
 }
 
 /* 4 columns */
-@media (min-width: 1333px) and (max-width: 1665px) {
-  .responsive-hexagon {
+@media (min-width: 1350px) and (max-width: 1624px) {
+  /* .responsive-hexagon {
     width: 24.8207142857%;
     padding: 0 0 28.6613328934% 0;
-  }
+  } */
   .hexagon-outer:nth-child(2n) {
     margin-left: -2%;
     margin-right: -2%;
@@ -203,11 +212,11 @@ export default {
 }
 
 /* 5 columns */
-@media (min-width: 1665px) {
-  .responsive-hexagon {
+@media (min-width: 1625px) {
+  /* .responsive-hexagon {
     width: 19.8565714286%;
     padding: 0 0 22.9290663147% 0;
-  }
+  } */
   .hexagon-outer:nth-child(5n + 2) {
     margin-left: -2%;
     margin-right: -2%;
