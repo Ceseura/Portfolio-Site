@@ -172,7 +172,7 @@ export default {
 
 .apo-top {
   position: absolute;
-  top: -20vh;
+  top: -40vh;
 }
 .apo-bottom {
   top: 100%;
@@ -181,7 +181,7 @@ export default {
 
 .angle-piece-occluder {
   width: 100%;
-  height: 20vh;
+  height: 40vh;
   overflow: hidden;
   pointer-events: none;
 }
@@ -190,14 +190,14 @@ export default {
   transform: translate(-10vw, -10vh) rotateZ(-5deg);
 }
 .ap-bottom {
-  transform: translate(-10vw, -30vh) rotateZ(-5deg);
+  transform: translate(-10vw, -60vh) rotateZ(-5deg);
 }
 
 .angle-piece {
   position: absolute;
   top: 100%;
   width: 120vw;
-  height: 20vh;
+  height: 30vh;
   background-color: var(--parallax-bg-color);
   pointer-events: all;
   z-index: 1;

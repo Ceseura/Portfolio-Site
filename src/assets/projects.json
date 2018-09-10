@@ -2,8 +2,8 @@
   "projects": [
     {
       "id": 0,
-      "name": "This Website",
-      "tags": ["Vue.js", "Html5", "CSS3", "Animation", "Parallax", "UX Design", "Transitions", "SVG", "Responsive"],
+      "name": "lx97.me",
+      "tags": ["Vue.js", "Html5", "CSS3", "Animation", "UX Design", "SVG", "Responsive"],
       "icon_url": "mysite.png",
       "github_url": "https://github.com/Karavis/Portfolio-Site",
       "link_url": null,

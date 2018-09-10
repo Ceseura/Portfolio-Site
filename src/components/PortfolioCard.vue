@@ -18,28 +18,7 @@
 <script>
 import Hexagon from '@/components/PortfolioCardHexagon.vue';
 
-var a = [
-  1,
-  0,
-  6,
-  0,
-  0,
-  2,
-  4,
-  0,
-  0,
-  3,
-  0,
-  0,
-  0,
-  5,
-  0,
-  0,
-  0,
-  0,
-  0,
-  7
-];
+var a = [1, 0, 6, 0, 0, 2, 4, 0, 3, , 0, 7, 0, 5, 0, 0, 0, 0, 0, 0];
 
 export default {
   components: {

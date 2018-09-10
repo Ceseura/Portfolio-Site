@@ -3,19 +3,22 @@
          v-bind:class='[stateChange ? 
                         visible ? "dramatic-entrance" : "dramatic-exit" : 
                         null]'> 
+      <div class='button-box'>
+        <a v-bind:href='myHexData.github_url'>
+          <div class='item-button'> 
+            &lt View Source / &gt
+            <!-- <div class='item-github-link'/> -->
+          </div>
+        </a>
+        <div class='spacer' />
+        <a v-bind:href='myHexData.link_url'>
+          <div class='item-button' v-bind:class='myHexData.link_url ? "null" : "disabled-button"'>
+            Check it out
+            <!-- <div class='item-link' v-bind:class='[myHexData.link_url ? null : "item-link-inactive"]'/> -->
+          </div>
+        </a>
+      </div>
       <div class='item-info-box'>
-        <div class='button-box'>
-          <a v-bind:href='myHexData.github_url'>
-            <div class='item-button'>
-              <div class='item-github-link'/>
-            </div>
-          </a>
-          <a v-bind:href='myHexData.link_url'>
-            <div v-bind:class='myHexData.link_url ? "item-button" : "disabled-button"'>
-              <div class='item-link' v-bind:class='[myHexData.link_url ? null : "item-link-inactive"]'/>
-            </div>
-          </a>
-        </div>
         <div class='item-info-title'>{{this.myHexData.name}}</div>
         <div class='item-info-dash'/>
         <div class='item-info-description' v-html='myHexData.description'/>
@@ -69,34 +72,38 @@ export default {
 
 .button-box {
   position: absolute;
-  top: 0;
-  right: 102.5%;
-  width: 15%;
-  min-width: 30px;
-  max-width: 50px;
+  top: 2.5%;
+  right: 5%;
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+}
+
+.spacer {
+  flex-grow: 1;
 }
 
 .item-button {
-  background-color: #00bebe;
-  border-radius: 10px;
+  background-color: #fffee3;
+  border-radius: 7.5px;
   padding: 0 10px;
-  border: 1px solid white;
-  margin-bottom: 40%;
+  /* border: 1px solid white; */
+  margin-bottom: 20px;
   cursor: pointer;
+  display: inline-block;
+
+  color: #00bebe;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  padding: 5px 10px;
 }
 
 .item-button:hover {
-  background-color: #008b8b;
-  border: transparent;
+  background-color: #e0e0ca;
 }
 
 .disabled-button {
-  background-color: #00bebe;
-  border-radius: 10px;
-  padding: 0 10px;
-  border: 1px solid white;
-  margin-bottom: 40%;
-  cursor: not-allowed;
+  visibility: hidden;
 }
 
 .item-github-link {
@@ -120,9 +127,9 @@ export default {
 .item-info-box {
   width: 70%;
   position: absolute;
-  top: 15%;
+  top: 50%;
   left: 50%;
-  transform: translate(-50%, 0);
+  transform: translate(-50%, -50%);
 }
 
 .item-info-tags {

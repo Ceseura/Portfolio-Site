@@ -109,8 +109,8 @@ export default {
 /* Oh god what even is going on here rotations and skew are confuse */
 .hexagon-content {
   position: absolute;
-  transform: rotate(-90deg) translate(-7.5%, -7.5%);
-  width: 115%;
+  transform: rotate(-90deg) translate(-9%, 0%);
+  width: 100%;
   height: 85%;
   animation-name: content-enterFromBottom;
   animation-duration: 0.3s;
@@ -166,14 +166,16 @@ export default {
 .responsive-hexagon {
   /* width: 220px;
   padding-top: 254px; */
-  width: 200px;
-  padding-top: 231px;
+  /* width: 200px;
+  padding-top: 231px; */
+  width: 180px;
+  padding-top: 208px;
 }
 
 /* width * factor: 1.15473441109 */
 
 /* 2 columns */
-@media (min-width: 700px) and (max-width: 1014px) {
+@media (min-width: 625px) and (max-width: 909px) {
   /* .responsive-hexagon {
     width: 45.1285714285%;
     padding: 0 0 52.1115143517% 0;
@@ -186,7 +188,7 @@ export default {
 }
 
 /* 3 columns */
-@media (min-width: 1015px) and (max-width: 1349px) {
+@media (min-width: 910px) and (max-width: 1214px) {
   /* .responsive-hexagon {
     width: 32.5928571428%;
     padding: 0 0 37.6360936984% 0;
@@ -199,7 +201,7 @@ export default {
 }
 
 /* 4 columns */
-@media (min-width: 1350px) and (max-width: 1624px) {
+@media (min-width: 1215px) and (max-width: 1464px) {
   /* .responsive-hexagon {
     width: 24.8207142857%;
     padding: 0 0 28.6613328934% 0;
@@ -212,7 +214,7 @@ export default {
 }
 
 /* 5 columns */
-@media (min-width: 1625px) {
+@media (min-width: 1465px) and (max-width: 1754) {
   /* .responsive-hexagon {
     width: 19.8565714286%;
     padding: 0 0 22.9290663147% 0;
@@ -223,6 +225,19 @@ export default {
     transform: translateY(46%) rotate(30deg) skewY(30deg);
   }
   .hexagon-outer:nth-child(5n + 4) {
+    margin-left: -2%;
+    margin-right: -2%;
+    transform: translateY(46%) rotate(30deg) skewY(30deg);
+  }
+}
+
+/* 6 columns */
+@media (min-width: 1755px) {
+  /* .responsive-hexagon {
+    width: 19.8565714286%;
+    padding: 0 0 22.9290663147% 0;
+  } */
+  .hexagon-outer:nth-child(2n) {
     margin-left: -2%;
     margin-right: -2%;
     transform: translateY(46%) rotate(30deg) skewY(30deg);
