@@ -230,6 +230,7 @@ export default {
   font-family: 'Montserrat', sans-serif;
   letter-spacing: 0.25em;
   word-spacing: 0.5em;
+  pointer-events: none;
 }
 
 .down-arrow {
