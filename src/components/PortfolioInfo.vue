@@ -6,7 +6,7 @@
       <div class='button-box'>
         <a v-bind:href='myHexData.github_url'>
           <div class='item-button'> 
-            &lt View Source / &gt
+            &lt; View Source / &gt;
             <!-- <div class='item-github-link'/> -->
           </div>
         </a>

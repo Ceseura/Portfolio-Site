@@ -41,12 +41,12 @@ export default {
       seeMoreInfo: false,
       stateChange: false,
       projects: projects,
-      id: -1,
+      id: -1
     };
   },
   methods: {
     closeInfo: function() {
-      console.log("close");
+      console.log('close');
       if (this.seeMoreInfo) {
         this.seeMoreInfo = false;
         setTimeout(() => document.body.classList.remove('no-scroll'), 1000);
@@ -58,8 +58,12 @@ export default {
       this.openInfoWindow();
     },
 
-    scrollHandlerUp: function() {this.scrollHandler(0)},
-    scrollHandlerDown: function() {this.scrollHandler(1)},
+    scrollHandlerUp: function() {
+      this.scrollHandler(0);
+    },
+    scrollHandlerDown: function() {
+      this.scrollHandler(1);
+    },
 
     // Ensures vertical scrolling finishes before horizontal scrolling
     scrollHandler: function(upOrDown) {
@@ -86,7 +90,6 @@ export default {
         this.stateChange = true;
         setTimeout(() => this.setUpWindowCloseHandler(), 200);
         setTimeout(() => el_body.classList.remove('no-scroll'), 1000);
-
       } else if (upOrDown === 1 && hexagons_bottom >= viewport_bottom) {
         window.removeEventListener('scroll', this.scrollHandlerDown);
         this.seeMoreInfo = true;
@@ -117,14 +120,14 @@ export default {
       // Scroll down
       if (hexagons_top > viewport_top) {
         window.scrollTo({ top: hexagons_top + 10, behavior: 'smooth' });
-        window.addEventListener('scroll', this.scrollHandlerUp)
+        window.addEventListener('scroll', this.scrollHandlerUp);
       } else if (hexagons_bottom < viewport_bottom) {
-      // Scroll up
+        // Scroll up
         window.scrollTo({
           top: hexagons_bottom - view_height - 10,
           behavior: 'smooth'
         });
-        window.addEventListener('scroll', this.scrollHandlerDown)
+        window.addEventListener('scroll', this.scrollHandlerDown);
       } else {
         this.seeMoreInfo = true;
         this.stateChange = true;
@@ -140,7 +143,7 @@ export default {
 
     scrollLockToY: function() {
       this.seeMoreInfo = false;
-      window.scrollTo({top: currY});
+      window.scrollTo({ top: currY });
       window.removeEventListener('scroll', this.scrollLockToY);
     }
   }
@@ -210,4 +213,3 @@ export default {
   overflow: hidden;
 }
 </style>
-

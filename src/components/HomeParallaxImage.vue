@@ -1,25 +1,25 @@
 <template>
     <div class='parallax-image'>
       <div class='mobile-warning mw-responsive'> Warning: this site is not designed for small screens! Please come back on a larger device for the intended experience. </div>
-      <a href='https://github.com/Karavis'>
+      <a v-bind:href='data.my_github_url'>
         <div class='github link-circle' v-on:mouseenter='show_tooltip(1)' v-on:mouseleave='hide_tooltip(1)'/>
         <div class='occluder height-offset1'>
           <div class='link-tooltip' v-if='this.show_github'> Github </div>
         </div>
       </a>
-      <a href='mailto:myboringemail4@gmail.com'>
+      <a v-bind:href='data.my_email_url'>
         <div class='email link-circle' v-on:mouseenter='show_tooltip(4)' v-on:mouseleave='hide_tooltip(4)'/>
         <div class='height-offset2 occluder'>
           <div class='link-tooltip' v-if='this.show_email'> Email </div>
         </div>
       </a>
-      <a href='https://www.linkedin.com/in/alexander-liang-7070b9167/'>
+      <a v-bind:href='data.my_linkedin_url'>
         <div class='linkedin link-circle' v-on:mouseenter='show_tooltip(2)' v-on:mouseleave='hide_tooltip(2)'/>
         <div class='height-offset3 occluder'>
           <div class='link-tooltip' v-if='this.show_linkedin'> Linkedin </div>
         </div>
       </a>
-      <a href='https://drive.google.com/file/d/0Bzt4QEceUnY6NFhXRTIwSy1JMXM/view'>
+      <a v-bind:href='data.my_resume_url'>
         <div class='resume link-circle' v-on:mouseenter='show_tooltip(3)' v-on:mouseleave='hide_tooltip(3)'/>
         <div class='height-offset4 occluder'>
           <div class='link-tooltip' v-if='this.show_resume'> Resume </div>
@@ -40,13 +40,16 @@
 // arrow animation
 // https://codepen.io/AlexandreJolly/pen/oWQMoG
 
+import data from '@/assets/projects.json';
+
 export default {
   data: function() {
     return {
       show_github: false,
       show_linkedin: false,
       show_resume: false,
-      show_email: false
+      show_email: false,
+      data: data
     };
   },
   methods: {
@@ -92,7 +95,7 @@ export default {
 
 @media (max-width: 665px) {
   .mw-responsive {
-    visibility: show;;
+    visibility: show;
   }
 }
 

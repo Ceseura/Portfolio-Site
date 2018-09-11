@@ -3,16 +3,16 @@
       <div class='my-name'> Alexander Liang </div>
       <div class='contact-icon-box cib-responsive'>
         <div class='circle-decor'/>
-        <a href='https://github.com/Karavis'>
+        <a v-bind:href='data.my_github_url'>
           <div class='github link-circle'/>
         </a>
-        <a href='mailto:myboringemail4@gmail.com'>
+        <a v-bind:href='data.my_email_url'>
           <div class='email link-circle'/>
         </a>
-        <a href='https://www.linkedin.com/in/alexander-liang-7070b9167/'>
+        <a v-bind:href='data.my_linkedin_url'>
           <div class='linkedin link-circle'/>
         </a>
-        <a href='https://drive.google.com/file/d/0Bzt4QEceUnY6NFhXRTIwSy1JMXM/view'>
+        <a v-bind:href='data.my_resume_url'>
           <div class='resume link-circle'/>
         </a>
         <div class='circle-decor'/>
@@ -22,7 +22,15 @@
 </template>
 
 <script>
-export default {};
+import data from '@/assets/projects.json';
+
+export default {
+  data: function() {
+    return {
+      data: data
+    };
+  }
+};
 </script>
 
 <style scoped>
